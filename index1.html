@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Catch The Target Game</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        h1 {
+            position: absolute;
+            top: 20px;
+            color: white;
+            text-shadow: 0 0 10px cyan;
+        }
+
+        .game-area {
+            width: 500px;
+            height: 350px;
+            background: rgba(255,255,255,0.1);
+            border: 3px solid white;
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .target {
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(circle, red 40%, darkred 60%);
+            border-radius: 50%;
+            position: absolute;
+            animation: move 3s infinite alternate ease-in-out;
+            cursor: pointer;
+        }
+
+        @keyframes move {
+            0% { top: 0; left: 0; }
+            25% { top: 0; left: 440px; }
+            50% { top: 290px; left: 440px; }
+            75% { top: 290px; left: 0; }
+            100% { top: 150px; left: 220px; }
+        }
+
+        .target:active {
+            background: radial-gradient(circle, yellow 40%, orange 60%);
+            box-shadow: 0 0 20px yellow;
+        }
+
+        .score {
+            position: absolute;
+            bottom: 20px;
+            color: white;
+            font-size: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+<h1>🎯 Catch The Target</h1>
+
+<div class="game-area">
+    <div class="target"></div>
+</div>
+
+<div class="score">Click the moving circle!</div>
+
+</body>
+</html>
